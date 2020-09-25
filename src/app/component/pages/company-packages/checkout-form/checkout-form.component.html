@@ -1,0 +1,103 @@
+<form>
+        <div class="card">
+                <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4 class="card-title">Subscription Details</h4>
+                            </div>
+                            <div class="col-md-6" style="font-size: 50px;">
+                                <i class="fab fa-cc-visa"></i>&nbsp;
+                                <i class="fab fa-cc-mastercard"></i>&nbsp;
+                                <i class="fab fa-cc-discover" style="width: 10%;"></i>&nbsp;&nbsp;
+                                <i class="fab fa-cc-amex"></i>
+                            </div> 
+                        </div>
+                        </div>
+                <hr>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6">
+                            <div class="form-group">
+                                <label for="amount" class="control-label col-form-label">Enter Amount</label>
+                                <input type="number" class="form-control" id="amount" placeholder="Enter Amount in Dollars.....">
+                            
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+                            <div class="form-group">
+                                <label for="coupon" class="control-label col-form-label">Enter Coupon</label>
+                                <input type="text" class="form-control" id="coupon" placeholder="Enter Coupon Code.....">
+                            </div>
+                        </div>
+                    </div>
+                    <h3>Billing Informations</h3>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6">
+                            <div class="form-group">
+                                <label for="firstName" class="control-label col-form-label">Enter First Name</label>
+                                <input type="text" class="form-control" id="firstName" placeholder="Enter Your First Name.....">
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="control-label col-form-label">Enter Email ID</label>
+                                <input type="email" class="form-control" id="email" placeholder="Enter Email.....">
+                            </div>
+
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+                            <div class="form-group">
+                                <label for="lastName" class="control-label col-form-label">Enter Last Name</label>
+                                <input type="text" class="form-control" id="lastName" placeholder="Enter Your Last Name.....">
+                            </div>
+                            <div class="form-group">
+                                <label for="contact_no" class="control-label col-form-label">Enter Contact No</label>
+                                <input type="number" class="form-control" id="contact_no" placeholder="Enter Your Contact No.....">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label for="address" class="control-label col-form-label">Enter Address</label>
+                        <input type="text" class="form-control" id="address" placeholder="Enter Your Address.....">
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6">
+                            <div class="form-group">
+                                <label for="city" class="control-label col-form-label">Enter City</label>
+                                <input type="text" class="form-control" id="city" placeholder="Enter Your City.....">
+                            </div>
+                            <div class="form-group">
+                                <label for="postal_code" class="control-label col-form-label">Enter Postal Code</label>
+                                <input type="number" class="form-control" id="postal_code" placeholder="Enter Your Postal_Code.....">
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+                            <div class="form-group">
+                                <label for="state" class="control-label col-form-label">Enter State</label>
+                                <select class="form-control custom-select">
+                                    <option value="">Male</option>
+                                    <option value="">Female</option>
+                                </select>
+                          </div>
+                            <div class="form-group">
+                                <label for="country" class="control-label col-form-label">Enter Country</label>
+                                <select class="form-control custom-select">
+                                    <option value="">Male</option>
+                                    <option value="">Female</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                 <div class="row">
+                    <label for="description" class="control-label col-form-label">Enter Description</label>
+                    <input type="text" class="form-control" id="description" placeholder="Enter Description.....">
+                 </div>
+                </div>
+
+                <div class="card-body">
+                    <div class="action-form">
+                        <div class="form-group m-b-0">
+                            <button type="submit" class="btn btn-dark waves-effect waves-light">Reset</button>
+                            <button type="submit" class="btn btn-info waves-effect waves-light" routerLink="/component/subscription-details" style="float: right;">Next</button>
+                        </div>     
+                    </div>
+               </div></div></form>

@@ -1,0 +1,162 @@
+<!-- Personal Tab Form Starts -->
+<form #personalForm="ngForm" class="editForm" novalidate>
+    <div class="tab-pane active">
+        <p class="font-medium-2 text-center">{{title}}</p>
+        <br />
+        <div class='row'>
+            <div class='col-12' *ngIf="personal">
+                <div class="row">
+                    <div class='col-12 col-sm-3'>
+                        <div class="form-group">
+                            <label class="form-control-label" for="firstname">First Name</label>
+                            <input class="form-control input-md" #firstName="ngModel" id="firstName"
+                                name="firstName" type="text" [(ngModel)]="personal.firstName">
+                        </div>
+                    </div>
+                    <div class='col-12 col-sm-3'>
+                        <div class="form-group">
+                            <label class="form-control-label" for="lastname">Last Name</label>
+                            <input class="form-control input-md" #lastname="ngModel" id="lastname"
+                                name="lastname" type="text" [(ngModel)]="personal.lastName">
+                            <!-- <small class="form-text text-muted danger"
+                                *ngIf="!lastname.valid && (lastname.dirty || lastname.touched)">This field is
+                                required!</small> -->
+                        </div>
+                    </div>
+
+                    <div class='col-12 col-sm-3'>
+                        <div class="form-group">
+                            <label class="form-control-label" for="dob">Date of Birth</label>
+                            <input type="date" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                           </div>
+                    </div>
+                    <div class='col-12 col-sm-3'>
+                        <div class="form-group">
+                            <label class="form-control-label" for="gender">Gender</label>
+                            <select class="form-control">
+                                <option>Choose Your Option</option>
+                                <option>Desiging</option>
+                                <option>Development</option>
+                                <option>Videography</option>
+                            </select> 
+                      </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class='col-12 col-sm-3'>
+                        <div class="form-group">
+                            <label class="form-control-label" for="location">Location</label>
+                            <input type="text" class="form-control" id="location" aria-describedby="name" placeholder="Location.....">
+                        </div>
+                    </div>
+                    <div class='col-12 col-sm-2'>
+                        <div class="form-group">
+                            <label class="form-control-label" for="height">Height</label>
+                            <input type="text" class="form-control" id="height" aria-describedby="name" placeholder="Inch.....">        
+                        </div>
+                     </div>
+
+                        <div class='col-12 col-sm-1'>
+                            <div class="form-group">
+                                <label class="form-control-label" for="feet">Feet</label>
+                                <input type="text" class="form-control" id="feet" aria-describedby="name" placeholder="Feet.....">         
+                    </div></div>
+
+                    <div class='col-12 col-sm-3'>
+                        <div class="form-group">
+                            <label class="form-control-label" for="weight">Weight</label>
+                            <input type="text" class="form-control" id="weight" aria-describedby="name" placeholder="Weight.....">
+                        </div>
+                    </div>
+                    <div class='col-12 col-sm-3'>
+                        <div class="form-group">
+                            <label class="form-control-label" for="tobacco">Tobacco Categories</label>
+                            <select class="form-control">
+                                <option>Choose Your Option</option>
+                                <option>Desiging</option>
+                                <option>Development</option>
+                                <option>Videography</option>
+                            </select> 
+                      </div>
+                    </div>
+                </div>
+                
+
+
+<!----------------------------------------------------------------------->
+<div class="row">
+    <div class='col-12 col-sm-1'></div>
+
+    <div class='col-12 col-sm-2'>
+        <div class="form-group">
+            <label class="form-control-label" for="firstname">First Name</label>
+            <select class="form-control">
+                <option>Choose Your Option</option>
+                <option>Desiging</option>
+                <option>Development</option>
+                <option>Videography</option>
+            </select> 
+        </div>
+    </div>
+    <div class='col-12 col-sm-2'>
+        <div class="form-group">
+            <label class="form-control-label" for="familyType">Family Type</label>
+            <select class="form-control">
+                <option>Choose Your Option</option>
+                <option>Desiging</option>
+                <option>Development</option>
+                <option>Videography</option>
+            </select> 
+        </div>
+    </div>
+
+    <div class='col-12 col-sm-2'>
+        <div class="form-group">
+            <label class="form-control-label" for="policy">Policy Purpose</label>
+
+            <select class="form-control">
+                <option>Choose Your Option</option>
+                <option>Desiging</option>
+                <option>Development</option>
+                <option>Videography</option>
+            </select> 
+        </div>
+    </div>
+    <div class='col-12 col-sm-2'>
+        <div class="form-group">
+            <label class="form-control-label" for="riders">Riders Available</label>
+            <select class="form-control">
+                <option>Choose Your Option</option>
+                <option>Desiging</option>
+                <option>Development</option>
+                <option>Videography</option>
+            </select> 
+      </div>
+    </div>
+    <div class='col-12 col-sm-2'>
+        <div class="form-group">
+            <label class="form-control-label" for="underwriting">Underwriting</label>
+            <select class="form-control">
+                <option>Choose Your Option</option>
+                <option>Desiging</option>
+                <option>Development</option>
+                <option>Videography</option>
+            </select> 
+      </div>
+    </div>
+</div>
+
+
+
+                
+                <div class="form-group text-center">
+                    <button type="button" uiSref="work" class="btn btn-success btn-raised"
+                        [disabled]="!personalForm.valid" (click)="save(personalForm)"> Next </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<!-- Personal Tab Form Ends -->
+
+

@@ -1,0 +1,237 @@
+<!-- <input type="checkbox" name="checkAll" class="checkAll">
+       <input type="checkbox" name="customer" class="checkboxes" value="1" >
+    
+       <input type="checkbox" name="customer" class="checkboxes" value="2" >
+      
+       <input type="checkbox" name="customer" class="checkboxes" value="3" >
+      <input type="checkbox" name="customer" class="checkboxes" value="4" >
+      -->
+
+
+<div class="scroll" >
+    <div class="card">
+      <div class="card-body">
+        <input id="myInput" type="text" placeholder="Search..">
+        <br>
+        <div id="myList">
+          <!-- <label for="select">
+            <input type="checkbox" [(ngModel)]="masterSelected" name="list_name" value="m1" (change)="select()"> Select/ Unselect All
+            </label><br> -->
+            <label for="">
+                <input type="checkbox" name="checkAll" [(ngModel)]="selectAll" class="checkAll"> Select All
+            </label><br>
+          <label>
+            <input type="checkbox" class="checkbox" value="royal" [(ngModel)]="royal"> &nbsp;&nbsp;ROYAL NEIGHBOURS
+            </label><br>
+            <label>
+              <input type="checkbox" class="checkbox"  value="prosperity" [(ngModel)]="prosperity"> &nbsp;&nbsp;PROSPERITY LIFE GROUP
+              </label><br>
+              <label>
+                <input type="checkbox" class="checkbox"  value="columbian" [(ngModel)]="columbian"> &nbsp;&nbsp;COLUMBIAN FINANCIAL GROUP
+                </label><br>
+                <label>
+            <input type="checkbox" class="checkbox"  value="fidelity" [(ngModel)]="fidelity"> &nbsp;&nbsp;FIDELITY & GUARANTY LIFE
+            </label><br>
+              <label>
+              <input type="checkbox" class="checkbox"  value="mutual" [(ngModel)]="mutual"> &nbsp;&nbsp;MUTUAL TRUST LIFE INSURANCE COMPANY
+                  </label><br>
+                  <label>
+                 <input type="checkbox" class="checkbox"  value="john" [(ngModel)]="john"> &nbsp;&nbsp;JOHN HANCOCK
+                </label><br>
+                    <label>
+                   <input type="checkbox" class="checkbox"  value="AIG" [(ngModel)]="AIG"> &nbsp;&nbsp;AIG
+                  </label><br>
+                 <label>
+                   <input type="checkbox" class="checkbox"  value="Forester" [(ngModel)]="Forester"> &nbsp;&nbsp;FORESTERS
+                   </label><br>
+                     <label>
+                      <input type="checkbox" class="checkbox"  value="occidental" [(ngModel)]="occidental"> &nbsp;&nbsp;OCCIDENTAL
+                      </label><br>
+                       <label>
+                       <input type="checkbox" class="checkbox"  value="national" [(ngModel)]="national"> &nbsp;&nbsp;NATIONAL LIFE GROUP
+                    </label><br>
+                   <label>
+                 <input type="checkbox" class="checkbox"  value="greber" [(ngModel)]="greber"> &nbsp;&nbsp;GREBER LIFE
+                   </label><br>
+                  <label>
+                   <input type="checkbox" class="checkbox"  value="united" [(ngModel)]="united"> &nbsp;&nbsp;UNITED HOME LIFE
+                  </label><br>
+                 <label>
+                 <input type="checkbox" class="checkbox"  value="Trans" [(ngModel)]="Trans"> &nbsp;&nbsp;TRANSAMERICA
+                 </label><br>
+               <label>
+               <input type="checkbox" class="checkbox"  value="American" [(ngModel)]="American"> &nbsp;&nbsp;AMERICAN-AMICABLE
+             </label><br>
+               <label>
+              <input type="checkbox" class="checkbox"  value="Americo" [(ngModel)]="Americo"> &nbsp;&nbsp;AMERICO
+                 </label><br>
+                 <label>
+              <input type="checkbox" class="checkbox"  value="omaha" [(ngModel)]="omaha"> &nbsp;&nbsp;MUTUAL OF OMAHA
+             </label><br>
+        </div>
+      
+      </div>
+    </div>
+    
+    </div>
+      
+      
+      
+      
+      <!--------------------------------------------------NgIf for Upper----------------------------------->
+      <br><br><br> 
+      
+      <div class="scroll">
+        <div class="card">
+          <div class="card-body">
+        
+      <input type="text" [(ngModel)]="searchData"> 
+      <div>
+          
+      <div *ngIf="royal || selectAll">
+      <h3>ROYAL NEIGHBORS</h3>
+      <div *ngFor="let rn of rn | filter:searchData">
+      <label for="">
+          <input type="checkbox" value="rn">&nbsp; {{rn.a}}
+      </label>
+    </div>
+    </div>
+    
+    
+     <div *ngIf="prosperity || selectAll">
+     <h3>PROSPERITY LIFE GROUP</h3>
+    <div *ngFor="let plg of plg | filter:searchData">
+    <label for="">
+    <input type="checkbox" [value]="plg">&nbsp; {{plg.a}}{{plg.b}}{{plg.c}}
+     </label>
+    </div>
+    </div>
+    
+    <div *ngIf="columbian || selectAll">
+     <h3>COLUMBIAN FINANCIAL GROUP</h3>
+    <div *ngFor="let cfg of cfg | filter:searchData">
+    <label for="">
+    <input type="checkbox" [value]="cfg">&nbsp; {{cfg.a}}{{cfg.b}}{{cfg.c}}
+     </label>
+    </div>
+    </div>
+    
+    <div *ngIf="mutual || selectAll">
+        <h3>MUTUAL TRUST LIFE INSURANCE COMPANY
+        </h3>
+        <div *ngFor="let mtli of mtli | filter : searchData">
+       <label for="">
+       <input type="checkbox" value="mtli">&nbsp;{{mtli.a}}
+        </label>
+       </div></div>
+    
+    
+       <div *ngIf="john || selectAll">
+        <h3>JOHN HANCOCK
+        </h3>
+        <div *ngFor="let jh of jh | filter:searchData">
+       <label for="">
+       <input type="checkbox" value="jh">&nbsp;{{jh.a}}
+        </label>
+       </div></div>
+    
+    
+       <div *ngIf="AIG || selectAll">
+        <h3>AIG
+        </h3>
+        <div *ngFor="let aig of aig | filter : searchData">
+       <label for="">
+       <input type="checkbox" value="aig">&nbsp;{{aig.a}}
+        </label>
+       </div></div>
+    
+       
+     <div *ngIf="Forester || selectAll">
+        <h3>FORESTERS</h3>
+       <div *ngFor="let f of foresters | filter: searchData">
+       <label for="">
+       <input type="checkbox" [value]="f">&nbsp; {{f.a}}{{f.b}}{{f.c}}
+        </label>
+       </div>
+       </div>
+    
+       
+     <div *ngIf="occidental || selectAll">
+        <h3>OCCIDENTAL</h3>
+       <div *ngFor="let o of occident | filter : searchData">
+       <label for="">
+       <input type="checkbox" [value]="o">&nbsp; {{o.a}}{{o.b}}{{o.c}}
+        </label>
+       </div>
+       </div>
+    
+        
+     <div *ngIf="national || selectAll">
+        <h3>NATIONAL LIFE GROUP</h3>
+       <div *ngFor="let nlg of nlg | filter:searchData">
+       <label for="">
+       <input type="checkbox" [value]="nlg">&nbsp; {{nlg.a}}{{nlg.b}}
+        </label>
+       </div>
+       </div>
+    
+       
+       <div *ngIf="greber || selectAll">
+        <h3>GREBER LIFE
+        </h3>
+        <div *ngFor="let gl of gl | filter : searchData">
+       <label for="">
+       <input type="checkbox" value="gl">&nbsp;{{gl.a}}
+        </label>
+       </div></div>
+    
+         
+     <div *ngIf="united || selectAll">
+        <h3>UNITED HOME LIFE</h3>
+       <div *ngFor="let uhl of uhl | filter : searchData">
+       <label for="">
+       <input type="checkbox" [value]="uhl">&nbsp; {{uhl.a}}{{uhl.b}}{{uhl.c}}{{uhl.d}}{{uhl.e}}
+        </label>
+       </div>
+       </div>
+    
+       <div *ngIf="Trans || selectAll">
+        <h3>TRANSAMERICA</h3>
+       <div *ngFor="let trans of trans | filter : searchData">
+       <label for="">
+       <input type="checkbox" [value]="trans">&nbsp; {{trans.a}} {{trans.b}} {{trans.c}}
+        </label>
+       </div>
+       </div>
+    
+       <div *ngIf="American || selectAll">
+        <h3>AMERICAN AMICABLE</h3>
+       <div *ngFor="let am of american | filter:searchData">
+       <label for="">
+       <input type="checkbox" [value]="am">&nbsp; {{am.a}}{{am.b}}{{am.c}}{{am.d}}
+        </label>
+       </div>
+       </div>
+    
+       <div *ngIf="Americo || selectAll">
+        <h3>AMERICO</h3>
+       <div *ngFor="let a of americo | filter:searchData">
+       <label for="">
+       <input type="checkbox" [value]="a">&nbsp; {{a.a}}{{a.b}}{{a.c}}
+        </label>
+       </div>
+       </div>
+    
+       <div *ngIf="omaha || selectAll">
+        <h3>MUTUAL OF OMAHA</h3>
+       <div *ngFor="let mo of mo | filter:searchData">
+       <label for="">
+       <input type="checkbox" [value]="mo">&nbsp; {{mo.a}} {{mo.b}} {{mo.c}} {{mo.d}} {{mo.e}}
+        </label>
+       </div>
+       </div>
+    
+    
+    
+    
+    </div></div></div>

@@ -1,0 +1,801 @@
+<div class="row">
+	<div class="col-12">
+		<div class="card">
+			<div class="card-body">
+           <form #workForm="ngForm">
+				<ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+					<ngb-panel title="Cancer">
+					<ng-template ngbPanelContent>
+                    <h5>When was client medically diagnosed, treated, or taken medication for cancer (other than basil cell skin cancer)?
+                    </h5>
+                  <div *ngFor="let item of cancer">
+                <label class="form-control-label" for="digestive">
+                <input id="cancer" name="cancer"
+                type="radio"  [value]="item">&nbsp; {{ item }}
+            </label>
+            </div>      
+            </ng-template>
+            </ngb-panel>
+            
+	<ngb-panel title="Disabled (under age 65)">
+	<ng-template ngbPanelContent>
+ <h5>
+  What's the reason for the disability?
+ </h5>   
+<div *ngFor="let r of reason">
+    <label class="form-control-label" for="reason">
+    <input id="reason" name="reason"
+    type="radio"  [value]="r">&nbsp; {{ r }}
+</label>
+</div>
+
+<h5>
+  What is the source of disability income?
+</h5>
+<div *ngFor="let i of income">
+    <label class="form-control-label" for="income">
+    <input id="income" name="income"
+    type="radio"  [value]="i">&nbsp; {{ i }}
+</label>
+</div>
+  </ng-template>
+  </ngb-panel>
+      
+  <ngb-panel title="Kidney">
+    <ng-template ngbPanelContent>
+      <h5>Dialysis</h5> 
+      <div *ngFor="let dialysis of dialysis">
+          <label class="form-control-label" for="dialysis">
+          <input id="dialysis" name="dialysis"
+          type="radio"  [value]="dialysis">&nbsp; {{ dialysis }}
+      </label>
+      </div>
+      
+     <h5> Diagnosed or treated for Renal Insuficiency/Failure, Polycystic Kidney Disease, or Nephrectomy (Kidney removal) 
+    </h5><div *ngFor="let kidney of kidney">
+          <label class="form-control-label" for="kidney">
+          <input id="kidney" name="kidney"
+          type="radio"  [value]="kidney">&nbsp; {{ kidney }}
+      </label>
+      </div>
+      
+      <div *ngFor="let transplant of transplant">
+          <label class="form-control-label" for="transplant">&nbsp; {{ transplant }}
+          <input id="transplant" name="transplant"
+          type="radio"  [value]="transplant">
+      </label>
+      </div>        
+  </ng-template></ngb-panel>  
+  
+  <ngb-panel title="Lung">
+    <ng-template ngbPanelContent>
+      <h5>Asthma</h5>How severe?
+      <div *ngFor="let asthma of asthma">
+          <label class="form-control-label" for="asthma">
+          <input id="asthma" name="asthma"
+          type="radio"  [value]="asthma">&nbsp; {{ asthma }}
+      </label>
+      </div>
+  
+  
+      <h5>COPD / Chronic Bronchitis / Black Lung / Emphysema / Chronic Respiratory Disease
+      </h5>how sevier?
+      <div *ngFor="let copd of copd">
+          <label class="form-control-label" for="copd">
+          <input id="copd" name="copd"
+          type="radio"  [value]="copd">&nbsp; {{ copd }}
+      </label>
+      </div>
+     
+
+      <h5>COPD / Chronic Bronchitis / Black Lung / Emphysema / Chronic Respiratory Disease
+      </h5>When was client medically diagnosed, treated for, or taken medication (including inhaler) for it?
+      <div *ngFor="let chronic of chronic">
+          <label class="form-control-label" for="chronic">
+          <input id="chronic" name="chronic"
+          type="radio"  [value]="chronic">&nbsp; {{ chronic }}
+      </label>
+      </div>
+     
+      <h5>Oxygen Equipment
+      </h5>When was client required to use oxygen to assist in breathing?
+      <div *ngFor="let oxygen of oxygen">
+          <label class="form-control-label" for="oxygen">
+          <input id="oxygen" name="oxygen"
+          type="radio"  [value]="oxygen">&nbsp; {{ oxygen }}
+      </label>
+      </div>
+  
+      <label class="form-control-label" for="Failure">Respiratory Failure &nbsp;
+          <input id="Failure" name="Failure"
+          type="radio"  [value]="Failure"> 
+      </label>
+  
+      <h5>Sleep Apnea
+      </h5>Combined with
+      <div *ngFor="let sleep of sleep">
+          <label class="form-control-label" for="sleep">
+          <input id="sleep" name="sleep"
+          type="radio"  [value]="sleep">&nbsp; {{ sleep }}
+      </label>
+      </div>
+      <label class="form-control-label" for="other">Other &nbsp;
+          <input id="other" name="other"
+          type="radio"  [value]="other"> 
+      </label>
+  
+      <h5>Tuberculosis
+      </h5>When was client diagnosed or last treated for it?
+      <div *ngFor="let tb of tb">
+          <label class="form-control-label" for="tb">
+          <input id="tb" name="tb"
+          type="radio"  [value]="tb">&nbsp; {{ tb }}
+      </label>
+      </div>
+    </ng-template>
+  </ngb-panel>
+
+  <ngb-panel title="Diabetes">
+    <ng-template ngbPanelContent>
+      <h5>When Diagnosed ?
+      </h5>
+  <div *ngFor="let d of diagnosed">
+      <label class="form-control-label" for="diagnosed">
+      <input id="diagnosed" name="diagnosed"
+      type="radio"  [value]="d">&nbsp; {{ d }} 
+  </label>
+  </div>
+  
+  <h5>Is client taking insulin ?
+  </h5>
+  Yes when was insulin started ?
+  <div *ngFor="let i of insulin">
+  <label class="form-control-label" for="insulin">
+  <input id="insulin" name="insulin"
+  type="radio"  [value]="i">&nbsp; {{ i }}
+  </label>
+  </div>
+  
+  <h5>Have you been treated for insulin shock, diabetic coma, or other diabetic complications?
+  </h5>
+  <div *ngFor="let c of complications">
+  <label class="form-control-label" for="complications">
+  <input id="complications" name="complications"
+  type="radio"  [value]="c">&nbsp; {{ c }} 
+  </label>
+  </div>
+  
+  
+  <h5>Combined with any of the following
+  </h5>
+  <div *ngFor="let g of gout">
+  <label class="form-control-label" for="gout">
+  <input id="gout" name="gout"
+  type="radio"  [value]="g">&nbsp; {{ g }}
+  </label>
+  </div>
+  </ng-template>  
+  </ngb-panel>
+
+  <ngb-panel title="Immune & Neurological">
+    <ng-template ngbPanelContent>
+      <div *ngFor="let a of aids">
+        <label class="form-control-label" for="aids">{{ a }}&nbsp; 
+        <input id="aids" name="aids"
+        type="radio"  [value]="a">
+    </label>
+    </div>
+    
+    <h5>Cerebral Palsy
+    </h5>
+    when was client diagnosed, last treated for, taken medication for, or hospitalized for cerebral palsy?
+    <div *ngFor="let m of medication">
+    <label class="form-control-label" for="medication">
+    <input id="medication" name="medication"
+    type="radio"  [value]="m">&nbsp; {{ m }}
+    </label>
+    </div>
+    
+    <h5>Cerebral Palsy
+    </h5>
+    How severe?
+    
+    <div *ngFor="let s of severe">
+    <label class="form-control-label" for="severe">
+    <input id="severe" name="severe"
+    type="radio"  [value]="s">&nbsp; {{ s }} 
+    </label>
+    </div>
+    
+    <div *ngFor="let c of crystic">
+        <label class="form-control-label" for="crystic">
+        <input id="crystic" name="crystic"
+        type="radio"  [value]="c">&nbsp; {{ c }} 
+    </label>
+    </div>
+    
+    
+    
+    <h5>Epilepsy / Seizures
+    </h5>What kind?
+    <div *ngFor="let seizures of seizures">
+    <label class="form-control-label" for="seizures">
+    <input id="seizures" name="seizures"
+    type="radio"  [value]="seizures">&nbsp; {{ seizures }}
+    </label>
+    </div>
+    
+    
+    <h5>Epilepsy / Seizures
+    </h5>When was the client medically diagnosed or treated (medication is not considered treatment), or hospitalized for Seizures last?
+    <div *ngFor="let epilepsy of epilepsy">
+    <label class="form-control-label" for="epilepsy">
+    <input id="epilepsy" name="epilepsy"
+    type="radio"  [value]="epilepsy">&nbsp; {{ epilepsy }}
+    </label>
+    </div>
+    
+    Hodgkin's Disease
+    <div *ngFor="let hodgkin of hodgkin">
+        <label class="form-control-label" for="hodgkin">
+        <input id="hodgkin" name="hodgkin"
+        type="radio"  [value]="hodgkin">&nbsp; {{ hodgkin }} 
+    </label>
+    </div>
+    
+    
+    <div *ngFor="let huntington of huntington">
+        <label class="form-control-label" for="huntington">{{ huntington }} &nbsp; 
+        <input id="huntington" name="huntington"
+        type="radio"  [value]="huntington">
+    </label>
+    </div>
+    
+    
+    <div *ngFor="let lou of lou">
+        <label class="form-control-label" for="lou">{{ lou }} &nbsp; 
+        <input id="lou" name="lou"
+        type="radio"  [value]="lou">
+    </label>
+    </div>
+    
+    <h5>Multiple Sclerosis</h5>
+    When was the client medically diagnosed or treated, or hospitalized for MS?
+    <div *ngFor="let sclerosis of sclerosis">
+        <label class="form-control-label" for="sclerosis">  
+        <input id="sclerosis" name="sclerosis"
+        type="radio"  [value]="sclerosis">&nbsp;{{ sclerosis }}
+    </label>
+    </div>
+    
+    Neuropathy
+    <div *ngFor="let neuropathy of neuropathy">
+        <label class="form-control-label" for="neuropathy">  
+        <input id="neuropathy" name="neuropathy"
+        type="radio"  [value]="neuropathy">&nbsp; {{ neuropathy }}
+    </label>
+    </div>
+    
+    
+    <h5>Parkinson's Disease
+    </h5>when was the client medically diagnosed, treated, taken medication, or hospitalized for parkinson's?
+    <div *ngFor="let parkinson of parkinson">
+        <label class="form-control-label" for="parkinson">  
+        <input id="parkinson" name="parkinson"
+        type="radio"  [value]="parkinson">&nbsp; {{ parkinson }}
+    </label>
+    </div>
+    
+    <h5>Parkinson's Disease
+    </h5>how severe is the parkinson's?
+    <div *ngFor="let parkinsonSevere of parkinsonSevere">
+        <label class="form-control-label" for="parkinsonSevere">  
+        <input id="parkinsonSevere" name="parkinsonSevere"
+        type="radio"  [value]="parkinsonSevere">&nbsp; {{ parkinsonSevere }}
+    </label>
+    </div>
+    
+    
+    <div *ngFor="let anemia of anemia">
+        <label class="form-control-label" for="anemia">{{ anemia }} &nbsp; 
+        <input id="anemia" name="anemia"
+        type="radio"  [value]="anemia">
+    </label>
+    </div>
+    
+    <h5>Lupus Erythematosus
+    </h5>what kind?
+    <div *ngFor="let lupus of lupus">
+        <label class="form-control-label" for="lupus">  
+        <input id="lupus" name="lupus"
+        type="radio"  [value]="lupus">&nbsp; {{ lupus }}
+    </label>
+    </div>
+    
+    
+    <h5>Lupus Erythematosus
+    </h5>if systemic lupus (sle), when was diagnosis or the last treatment (medication taken)?
+    <div *ngFor="let erythematosus of erythematosus">
+        <label class="form-control-label" for="erythematosus">  
+        <input id="erythematosus" name="erythematosus"
+        type="radio"  [value]="erythematosus">&nbsp; {{ erythematosus }}
+    </label>
+    </div>
+    
+    <h5>Lupus Erythematosus
+    </h5>Any complications in the past year?
+    <div *ngFor="let complications of complications">
+        <label class="form-control-label" for="complications">  
+        <input id="complications" name="complications"
+        type="radio"  [value]="complications">&nbsp; {{ complications }}
+    </label>
+    </div>
+    </ng-template>
+  </ngb-panel>
+
+  <ngb-panel title="Heart / Circulatory">
+    <ng-template ngbPanelContent>
+<h5>  Aneurysm</h5>How long ago was client medically diagnosed or treated, or hospitolized?
+    <div *ngFor="let aneurysm of aneurysm">
+        <label class="form-control-label" for="aneurysm">
+        <input id="aneurysm" name="aneurysm"
+        type="radio"  [value]="aneurysm">&nbsp; {{ aneurysm }}
+    </label>
+    </div>
+    
+    <h5>Angina (Chest Pain)
+    </h5>
+    When was client medically diagnosed or treated for angina?
+    <div *ngFor="let aneurysm of aneurysm">
+        <label class="form-control-label" for="aneurysm">
+        <input id="aneurysm" name="aneurysm"
+        type="radio"  [value]="aneurysm">&nbsp; {{ aneurysm }}
+    </label>
+    </div>
+    
+    <h5>Atrial Fibrillation (A-fib) / Heart Arrhythmia / Heart Murmur / Irregular Heart Beat
+    </h5>
+    When were they treated (taken medication) for it last?
+    <div *ngFor="let aneurysm of aneurysm">
+        <label class="form-control-label" for="aneurysm">
+        <input id="aneurysm" name="aneurysm"
+        type="radio"  [value]="aneurysm">&nbsp; {{ aneurysm }}
+    </label>
+    </div>
+    
+    
+    <h5>Cardiomyopathy / Heart Disease
+    </h5>
+    When was client medically diagnosed or treated for angina?
+    <div *ngFor="let cardiomyopathy of cardiomyopathy">
+        <label class="form-control-label" for="cardiomyopathy">
+        <input id="cardiomyopathy" name="cardiomyopathy"
+        type="radio"  [value]="cardiomyopathy">&nbsp; {{ cardiomyopathy }} 
+    </label>
+    </div>
+    
+    
+    
+    <h5>Circulatory Disease / Disorder (including Peripheral Vascular Disease)
+    </h5>When was client medically diagnosed or last treated for it?
+    <div *ngFor="let aneurysm of aneurysm">
+        <label class="form-control-label" for="aneurysm"> 
+        <input id="aneurysm" name="aneurysm"
+        type="radio"  [value]="aneurysm">&nbsp;{{ aneurysm }}</label></div>
+        <label class="form-control-label" for="aneurysm">Combined With diabetes  &nbsp; 
+         <input id="aneurysm" name="aneurysm"
+            type="radio" value="Combined With diabetes">
+    </label>
+    
+    
+    
+    
+    <h5>Congestive Heart Failure
+    </h5>When was client medically diagnosed or treated for heart failure?
+    <div *ngFor="let aneurysm of aneurysm">
+        <label class="form-control-label" for="aneurysm">
+        <input id="aneurysm" name="aneurysm"
+        type="radio"  [value]="aneurysm">&nbsp; {{ aneurysm }}
+    </label>
+    </div>
+    
+    <h5>
+        Corinary Artery Disease
+    </h5>When was it diagnosed or last treated for?
+    <div *ngFor="let aneurysm of aneurysm">
+        <label class="form-control-label" for="aneurysm">
+        <input id="aneurysm" name="aneurysm"
+        type="radio"  [value]="aneurysm">&nbsp; {{ aneurysm }}
+    </label>
+    </div>
+    
+    <h5>Defibrillator</h5>When was it inserted?
+    <div *ngFor="let huntington of huntington">
+        <div *ngFor="let aneurysm of aneurysm">
+            <label class="form-control-label" for="aneurysm">
+            <input id="aneurysm" name="aneurysm"
+            type="radio"  [value]="aneurysm">&nbsp; {{ aneurysm }}
+        </label>
+        </div>
+    
+    <h5>Heart Attack, Stroke, Heart/Circulatory surgery, Stent/Bipass surgery</h5>
+    When was the event?
+    <div *ngFor="let aneurysm of aneurysm">
+        <label class="form-control-label" for="aneurysm">
+        <input id="aneurysm" name="aneurysm"
+        type="radio"  [value]="aneurysm">&nbsp; {{ aneurysm }}
+    </label>
+    </div>
+    
+    <h5>High Blood Pressure
+    </h5>How many meds?
+    <div *ngFor="let bp of bp">
+        <label class="form-control-label" for="bp">  
+        <input id="bp" name="bp"
+        type="radio"  [value]="bp">&nbsp;{{ bp }}
+    </label>
+    </div>
+    
+    <h5>Pacemaker</h5>When was it inserted?
+    <div *ngFor="let aneurysm of aneurysm">
+        <label class="form-control-label" for="aneurysm">
+        <input id="aneurysm" name="aneurysm"
+        type="radio"  [value]="aneurysm">&nbsp; {{ aneurysm }}
+    </label>
+    </div>
+    
+    
+    <h5>Pulmonary Embolism
+    </h5>When did it occur?
+    <div *ngFor="let pulmonary of pulmonary">
+        <label class="form-control-label" for="pulmonary">  
+        <input id="pulmonary" name="pulmonary"
+        type="radio"  [value]="pulmonary">&nbsp; {{ pulmonary }}
+    </label>
+    </div>
+    
+    <h5>Transient Ischemic Attack (TIA)
+    </h5>When did it occur?
+    <div *ngFor="let transient of transient">
+        <label class="form-control-label" for="transient">  
+        <input id="transient" name="transient"
+        type="radio"  [value]="transient">&nbsp; {{ transient }}
+    </label></div>
+    <label class="form-control-label" for="transient">   Combined with Tobacco Use -Smoker&nbsp;
+        <input id="transient" name="transient"
+        type="radio"  value="Combined with Tobacco Use -Smoker">
+    </label>
+    </div></ng-template>
+  </ngb-panel>
+
+   <ngb-panel title="Mental / Nervous Disorders">
+     <ng-template ngbPanelContent>
+      <h5>Alzheimer's / Dementia</h5>When was client medically diagnosed or last treated for it?
+      <div *ngFor="let dementia of dementia">
+          <label class="form-control-label" for="dementia">
+          <input id="dementia" name="dementia"
+          type="radio"  [value]="dementia">&nbsp; {{ dementia }}
+      </label>
+      </div>
+  
+  
+      <h5>Anxiety / Depression
+      </h5>How many meds?
+      <div *ngFor="let anxiety of anxiety">
+          <label class="form-control-label" for="anxiety">
+          <input id="anxiety" name="anxiety"
+          type="radio"  [value]="anxiety">&nbsp; {{ anxiety }}
+      </label>
+      </div>
+     
+  
+  
+      <h5>Bi-Polar Disorder / Major Depression
+      </h5>When was client medically diagnosed or last treated for it?
+      <div *ngFor="let dementia of dementia">
+          <label class="form-control-label" for="dementia">
+          <input id="dementia" name="dementia"
+          type="radio"  [value]="dementia">&nbsp; {{ dementia }}
+      </label>
+      </div>
+      <label class="form-control-label" for="down">Down's Syndrome&nbsp;
+          <input id="down" name="down"
+          type="radio"  [value]="down">
+      </label><br>
+      <label class="form-control-label" for="Schizophrenia">Schizophrenia&nbsp;
+          <input id="Schizophrenia" name="Schizophrenia"
+          type="radio"  [value]="Schizophrenia">
+      </label>
+  
+      <h5>PTSD
+      </h5>How severe?
+      <div *ngFor="let ptsd of ptsd">
+          <label class="form-control-label" for="ptsd">
+          <input id="ptsd" name="ptsd"
+          type="radio"  [value]="ptsd">&nbsp; {{ ptsd }}
+      </label>
+      </div>
+  
+  
+      <h5>Retardation
+      </h5>How severe?
+      <div *ngFor="let retard of retard">
+          <label class="form-control-label" for="retard">
+          <input id="retard" name="retard"
+          type="radio"  [value]="retard">&nbsp; {{ retard }}
+      </label>
+      </div>
+     </ng-template>
+   </ngb-panel>
+
+  <ngb-panel title="Digestive">
+    <ng-template ngbPanelContent>
+      <h5>Crohn's Disease
+      </h5>
+      <h5>When was it diagnosed?
+      </h5>
+      
+  <div *ngFor="let c of crohn">
+      <label class="form-control-label" for="crohn">
+      <input id="crohn" name="crohn"
+      type="radio"  [value]="c">&nbsp; {{ c }} 
+  </label>
+  </div>
+  
+  <h5>Diverticulities
+  </h5>
+  How severe?
+  <div *ngFor="let d of diverticulities">
+  <label class="form-control-label" for="diverticulities">
+  <input id="diverticulities" name="diverticulities"
+  type="radio"  [value]="d">&nbsp; {{ d }}
+  </label>
+  </div>
+  
+  <h5>Gastric Bypass
+  </h5>
+  When was the surgery?
+  <div *ngFor="let g of gastric">
+  <label class="form-control-label" for="gastric">
+  <input id="gastric" name="gastric"
+  type="radio"  [value]="g">&nbsp; {{ g }} 
+  </label>
+  </div>
+  
+  
+  <h5>Ulcerative Colitis
+  </h5>When was client diagnosed, treated for, taken medication for, or hospitalized for Ulcerative Colitis?
+  <div *ngFor="let u of ulcer">
+  <label class="form-control-label" for="ulcer">
+  <input id="ulcer" name="ulcer"
+  type="radio"  [value]="u">&nbsp; {{ u }}
+  </label>
+  </div>
+  
+  
+  <h5>Weight Reduction Surgery
+  </h5>When was the surgery?
+  <div *ngFor="let s of surgery">
+  <label class="form-control-label" for="surgery">
+  <input id="surgery" name="surgery"
+  type="radio"  [value]="s">&nbsp; {{ s }}
+  </label>
+  </div>
+   </ng-template>
+  </ngb-panel>
+
+  <ngb-panel title="Joint & Muscle">
+    <ng-template ngbPanelContent>
+      <h5>Arthritis
+      </h5>  What kind?
+  <div *ngFor="let arthritis of arithisis">
+      <label class="form-control-label" for="arthritis">
+      <input id="arthritis" name="arthritis"
+      type="radio"  [value]="arthritis">&nbsp; {{ arthritis }} 
+  </label>
+  </div>
+  
+  <div *ngFor="let gouts of gouts">
+  <label class="form-control-label" for="gouts">&nbsp; {{ gouts }}
+  <input id="gouts" name="gouts"
+  type="radio"  [value]="gouts">&nbsp; 
+  </label>
+  </div>
+  
+  <h5>Muscular Dystrophy (Also see wheelchair)
+  </h5>When was the client medically diagnosed or treated, or hospitalized for MD?
+  <div *ngFor="let muscular of muscular">
+  <label class="form-control-label" for="muscular">
+  <input id="muscular" name="muscular"
+  type="radio"  [value]="muscular">&nbsp; {{ muscular }} 
+  </label>
+  </div>
+  
+  
+  <h5>Combined with any of the followingParalysis (2 or more extremities) (Also see wheelchair)
+  </h5>When was the client medically diagnosed or treated, or hospitalized for paralysis?
+  <div *ngFor="let paralysis of paralysis">
+  <label class="form-control-label" for="paralysis">
+  <input id="paralysis" name="paralysis"
+  type="radio"  [value]="paralysis">&nbsp; {{ paralysis }}
+  </label>
+  </div>  
+    </ng-template> 
+  </ngb-panel>
+
+  <ngb-panel title="Liver">
+    <ng-template ngbPanelContent>
+      <label class="form-control-label" for="Hepatitis">&nbsp; Hepatitis A
+        <input id="Hepatitis" name="Hepatitis"
+        type="radio"  [value]="Hepatitis"> 
+    </label>
+    <h5>Hepatitis B</h5>When was the client diagnosed or treated (taken medication) for Hepatits B?
+    <div *ngFor="let aneurysm of aneurysm">
+        <label class="form-control-label" for="aneurysm">
+        <input id="aneurysm" name="aneurysm"
+        type="radio"  [value]="aneurysm">&nbsp; {{ aneurysm }}
+    </label>
+    </div>
+
+
+    <h5>Hepatitis C</h5>When was the client diagnosed or treated (taken medication) for Hepatits C?
+    <div *ngFor="let aneurysm of aneurysm">
+        <label class="form-control-label" for="aneurysm">
+        <input id="aneurysm" name="aneurysm"
+        type="radio"  [value]="aneurysm">&nbsp; {{ aneurysm }}
+    </label>
+    </div>
+    <label class="form-control-label" for="stage">&nbsp; stage 3/cirrhosis
+        <input id="stage" name="stage"
+        type="radio"  [value]="stage"> 
+    </label>
+
+
+    <h5>Cirrhosis of Liver / Liver Disease
+    </h5>When was client medically diagnosed, hospitalized, or treated for it last?
+    <div *ngFor="let cardiomyopathy of cardiomyopathy">
+        <label class="form-control-label" for="cardiomyopathy">
+        <input id="cardiomyopathy" name="cardiomyopathy"
+        type="radio"  [value]="cardiomyopathy">&nbsp; {{ cardiomyopathy }}
+    </label>
+    </div>
+   
+    <h5>Liver Failure
+    </h5>When was client medically diagnosed, hospitalized, or treated for it last?
+    <div *ngFor="let liver of liver">
+        <label class="form-control-label" for="liver">
+        <input id="liver" name="liver"
+        type="radio"  [value]="liver">&nbsp; {{ liver }}
+    </label>
+    </div>
+    </ng-template>
+  </ngb-panel>
+
+  <ngb-panel title="Others">
+    <ng-template ngbPanelContent>
+      <h5>Alcoholism</h5>Abbused alcohol or had, or been recommended to have, treatment how long ago?
+      <div *ngFor="let alcohol of alcohol">
+          <label class="form-control-label" for="alcohol">
+          <input id="alcohol" name="alcohol"
+          type="radio"  [value]="alcohol">&nbsp; {{ alcohol }}
+      </label>
+      </div>
+  
+  
+      <h5>Amputation
+      </h5>Amputation caused by?
+      <div *ngFor="let amput of amput">
+          <label class="form-control-label" for="amput">
+          <input id="amput" name="amput"
+          type="radio"  [value]="amput">&nbsp; {{ amput }}
+      </label>
+      </div>
+     
+  
+  
+      <h5>Blindness
+      </h5>What caused the blindness?
+      <div *ngFor="let blind of blind">
+          <label class="form-control-label" for="blind">
+          <input id="blind" name="blind"
+          type="radio"  [value]="blind">&nbsp; {{ blind }}
+      </label>
+      </div>
+  
+  
+      <h5>Driving Record
+      </h5>How long ago was the DUI, DWI, 2 or more accidents, license currently suspended or revoked, or 3 or more driving violations or combinations?
+  
+      <div *ngFor="let driving of driving">
+          <label class="form-control-label" for="driving">
+          <input id="driving" name="driving"
+          type="radio"  [value]="driving">&nbsp; {{ driving }}
+      </label>
+      </div>
+      <label class="form-control-label" for="suspended">currently suspended/revoked license in the past 12 months&nbsp;
+          <input id="suspended" name="suspended"
+          type="radio"  [value]="suspended">
+      </label>
+  
+      <h5>Drug Abuse
+      </h5>Marjiuana: when was it last used?
+      <div *ngFor="let drug of drug">
+          <label class="form-control-label" for="drug">
+          <input id="drug" name="drug"
+          type="radio"  [value]="drug">&nbsp; {{ drug }} years
+      </label>
+      </div>
+  
+      
+      <h5>Drug Abuse
+      </h5>Other drug types: when did client last use illegal drugs or abused drugs or been recommended to have treatment or counseling for drug use?
+      <div *ngFor="let drug of drug">
+          <label class="form-control-label" for="drug">
+          <input id="drug" name="drug"
+          type="radio"  [value]="drug">&nbsp; {{ drug }} years
+      </label>
+      </div>
+  
+      
+      <h5>Home Health Care / Hospice
+      </h5>Does client require assistance to feed, bathe, dress or take their own medications or are they confined to a hospital, nursing home, mental facility, hospice, or require home health nursing care?
+      <div *ngFor="let home of home">
+          <label class="form-control-label" for="home">
+          <input id="home" name="home"
+          type="radio"  [value]="home">&nbsp; {{ home }}
+      </label>
+      </div>
+  
+      
+      <h5>Hospitalization
+      </h5>
+      <div *ngFor="let hospital of hospital">
+          <label class="form-control-label" for="hospital">
+          <input id="hospital" name="hospital"
+          type="radio"  [value]="hospital">&nbsp; {{ hospital }}
+      </label>
+      </div>
+      <label class="form-control-label" for="Organ">Organ / Bone Morrow Transplant &nbsp;
+          <input id="Organ" name="Organ"
+          type="radio"  [value]="Organ">
+      </label>
+      
+  
+      <h5>Misdemeanor / Felony / Probation / Parole / Incarcerated
+      </h5>When?
+      <div *ngFor="let felony of felony">
+          <label class="form-control-label" for="felony">
+          <input id="felony" name="felony"
+          type="radio"  [value]="felony">&nbsp; {{ felony }} years
+      </label>
+      </div>
+      <label class="form-control-label" for="History">History of criminal record &nbsp;
+          <input id="History" name="History"
+          type="radio"  [value]="History">
+      </label>
+      
+      <h5>Wheelchair
+      </h5>When was wheelchair used?
+      <div *ngFor="let wheelchair of wheelchair">
+          <label class="form-control-label" for="wheelchair">
+          <input id="wheelchair" name="wheelchair"
+          type="radio"  [value]="wheelchair">&nbsp; {{ wheelchair }} 
+      </label>
+      </div>
+  
+    </ng-template>
+    
+  </ngb-panel>
+
+
+
+
+        </ngb-accordion>
+        </form>
+        
+
+        </div></div></div></div>
+        <div style="text-align: center;">
+          <button uiSref="personal" type="button" class="btn btn-raised btn-secondary mr-1" (click)="cancel()"> Back</button>
+          <button uiSref="address" type="button" class="btn btn-raised btn-info"  (click)="save(workForm)"> Search  </button>
+        </div>

@@ -1,0 +1,77 @@
+<div class="row">
+   <div class="col-md-12">
+       <!--- Complete Table -->
+       <div class="card">
+           <div class="card-body">
+           <div class="d-flex mt-3">
+               <input type="text" placeholder="Search" class="form-control w-auto" [(ngModel)]="csearchTerm" />
+               <button type="button"  class="btn btn-primary ml-auto">+ Add Client</button>
+           </div>
+           <table class="table table-striped border mt-4">
+               <thead>
+                   <tr>
+                       <th>Agent Name</th>
+                       <th>Email</th>
+                       <th>User Type</th>
+                       <th>Account Code</th>
+                       <th>Trainer Name</th>
+                       <th>Registered via</th>
+                       <th>Status</th>
+                       <th>LMS Status</th>
+                       <th>LMS Role</th>
+                       <th>Action</th>
+                   </tr>
+               </thead>
+               
+               <tbody>
+                   <tr *ngFor="let client of cfilterClient | slice: (cpage-1) * cpageSize : (cpage-1) * cpageSize + cpageSize | filter:csearchTerm">
+                       <td>
+                           <ngb-highlight [result]="client.AgentName" [term]="csearchTerm"></ngb-highlight>
+                       </td>
+                       <td>
+                           <ngb-highlight [result]="client.Email" [term]="csearchTerm"></ngb-highlight>
+                       </td>
+                       <td>
+                           <ngb-highlight [result]="client.UserType" [term]="csearchTerm"></ngb-highlight>
+                       </td>
+                       <td>
+                           <ngb-highlight [result]="client.AccountCode" [term]="csearchTerm"></ngb-highlight>
+                       </td>
+                       <td>
+                           <ngb-highlight [result]="client.TrainerName" [term]="csearchTerm"></ngb-highlight>
+                       </td>
+                       <td>
+                           <ngb-highlight [result]="client.RegisteredVia" [term]="csearchTerm"></ngb-highlight>
+                       </td>
+                       <td>
+                           <ngb-highlight [result]="client.Status" [term]="csearchTerm"></ngb-highlight>
+                       </td>
+                       <td>
+                           <ngb-highlight [result]="client.LmsStatus" [term]="csearchTerm"></ngb-highlight>
+                       </td>
+                       <td>
+                           <ngb-highlight [result]="client.LmsRole" [term]="csearchTerm"></ngb-highlight>
+                       </td>
+                       <td>
+                          <i class="ti-pencil text-info m-r-10 pointer"></i>
+                           <i class="ti-trash text-danger pointer"></i> 
+                       </td>
+                   </tr>
+               </tbody>
+           </table>
+           <h3>Showing 1 to {{cfilterClient.length}} entries</h3>
+
+           <div class="d-flex justify-content-between p-2">    
+               <ngb-pagination [(page)]="cpage"
+               [pageSize]="cpageSize"
+               [collectionSize]="totalLengthOfCollection"></ngb-pagination>
+               <select class="custom-select" style="width: auto" [(ngModel)]="cpageSize">
+               <option [ngValue]="2">2 items per page</option>
+               <option [ngValue]="4">4 items per page</option>
+               <option [ngValue]="6">6 items per page</option>
+             </select>
+           </div>
+           </div>
+       </div>
+       <!--- End Complete Table -->
+      </div></div>

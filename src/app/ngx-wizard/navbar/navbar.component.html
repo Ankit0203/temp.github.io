@@ -1,0 +1,31 @@
+<!-- Navbar for Wizard Starts -->
+<ul class="wizard-navbar">
+    <div class="liner"></div>
+
+    <li class="active flex-fill"> 
+     <h5>Client & Policy Details</h5>
+        <a [ngClass]="(page==='Personal')?'nav-link active':'nav-link'" uiSrefActive="active" uiSref="personal" data-toggle="tab"
+            title="personal">
+            <span class="round-tabs one">
+            01
+            </span>
+        </a>
+    </li>
+    <li class="flex-fill">
+        <h5>  Health Details</h5>
+        <a [ngClass]="(page==='Work')?'nav-link active':'nav-link'" uiSrefActive="active" uiSref="work" data-toggle="tab" title="work">
+            <span class="round-tabs two">
+               02
+            </span> 
+        </a>
+    </li>
+    <li class="flex-fill">
+        <h5> Result</h5>
+        <a [ngClass]="(page==='Result')?'nav-link active':'nav-link'" uiSrefActive="active" uiSref="result" data-toggle="tab" title="completed">
+            <span class="round-tabs four">
+              03
+            </span>
+        </a>
+    </li>
+</ul>
+<!-- Navbar for Wizard Ends -->

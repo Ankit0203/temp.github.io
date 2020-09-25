@@ -1,0 +1,74 @@
+<div class="row">
+    <div class="col-md-12">
+        <!--- Complete Table -->
+        <div class="card">
+            <div class="card-body">
+            <div class="d-flex mt-3">
+                <input type="text" placeholder="Search" class="form-control w-auto" [(ngModel)]="csearchTerm" />
+            </div>
+            <table class="table table-striped border mt-4">
+                <thead>
+                    <tr>
+                        <th>Company Name</th>
+                        <th>Manger Name</th>
+                        <th>Package Name</th>
+                        <th>Agent Limit</th>
+                        <th>Remain Agent Limit</th>
+                        <th>User Management</th>
+                        <th>Product Management</th>
+                        <th>Product Sales Videos</th>
+                        <th>Learning Management</th>      
+                        <th>Payment Status</th>  
+                </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let client of cfilterClient | slice: (cpage-1) * cpageSize : (cpage-1) * cpageSize + cpageSize | filter:csearchTerm"> 
+                        <td>
+                            <ngb-highlight [result]="client.CompanyName" [term]="csearchTerm"></ngb-highlight>
+                        </td>
+                        <td>
+                            <ngb-highlight [result]="client.ManagerName" [term]="csearchTerm"></ngb-highlight>
+                        </td>
+                        <td>
+                            <ngb-highlight [result]="client.PackageName" [term]="csearchTerm"></ngb-highlight>
+                        </td>
+                        <td>
+                            <ngb-highlight [result]="client.AgentLimit" [term]="csearchTerm"></ngb-highlight>
+                        </td>
+                        <td>
+                            <ngb-highlight [result]="client.RemainAgentLimit" [term]="csearchTerm"></ngb-highlight>
+                        </td>
+                        <td>
+                            <ngb-highlight [result]="client.UserManagement" [term]="csearchTerm"></ngb-highlight>
+                        </td>
+                        <td>
+                            <ngb-highlight [result]="client.ProductManagement" [term]="csearchTerm"></ngb-highlight>
+                        </td>
+                        <td>
+                            <ngb-highlight [result]="client.ProductSalesVideos" [term]="csearchTerm"></ngb-highlight>
+                        </td>
+                        <td>
+                            <ngb-highlight [result]="client.LearningManagement" [term]="csearchTerm"></ngb-highlight>
+                        </td>
+                        <td>
+                            <ngb-highlight [result]="client.PaymentStatus" [term]="csearchTerm"></ngb-highlight>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Showing 1 to  {{cfilterClient.length}} entries</h3>
+
+            <div class="d-flex justify-content-between p-2">    
+                <ngb-pagination [(page)]="cpage"
+                [pageSize]="cpageSize"
+                [collectionSize]="totalLengthOfCollection"></ngb-pagination>
+                <select class="custom-select" style="width: auto" [(ngModel)]="cpageSize">
+                <option [ngValue]="2">2 items per page</option>
+                <option [ngValue]="4">4 items per page</option>
+                <option [ngValue]="6">6 items per page</option>
+              </select>
+            </div>
+            </div>
+        </div>
+        <!--- End Complete Table -->
+       </div></div>
